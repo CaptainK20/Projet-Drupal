@@ -1,0 +1,50 @@
+<article class="profil-chercheur">
+
+  <div class="profil-header">
+    <div class="profil-photo-nom">
+        <div class="profil-nom">
+             {{ label }}
+        </div>
+      <div class="profil-photo">
+        {{ content.field_profile_picture }}
+      </div>
+      
+    </div>
+
+    {% if content.field_affiliation or content.field_discipline %}
+      <section class="profil-box">
+        <h2 class="section-title">Institution & domaine</h2>
+        <div class="profil-institution">
+          {{ content.field_affiliation }}
+          {{ content.field_discipline }}
+        </div>
+      </section>
+    {% endif %}
+  </div>
+
+  {% if content.field_mail or content.field_social_network_profile %}
+    <section class="profil-section">
+      <h2 class="section-title">Contact</h2>
+      <div class="profil-contact">
+        {{ content.field_mail }}
+
+        {% if content.field_social_network_profile.0['#url'] %}
+          <a href="{{ content.field_social_network_profile.0['#url'] }}" target="_blank" class="btn-social" title="Voir le profil LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            <span class="visually-hidden">Profil LinkedIn</span>
+          </a>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if content.field_description %}
+    <section class="profil-section">
+      <h2 class="section-title">Biographie</h2>
+      <div class="profil-bio">
+        {{ content.field_description }}
+      </div>
+    </section>
+  {% endif %}
+
+</article>

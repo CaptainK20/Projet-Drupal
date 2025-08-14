@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Template principal pour le thème Flower.
+ * Toutes les régions sont indépendantes.
+ */
+#}
+
+<div id="page-wrapper" class="page-wrapper">
+  <div id="page">
+
+    {% if page.header %}
+      <div class="region-header">
+        {{ page.header }}
+      </div>
+    {% endif %}
+
+  {% if page.logo %}
+      <div class="region-logo">
+        {{ page.logo }}
+      </div>
+    {% endif %}
+
+    {% if page.primary_menu %}
+      <div class="region-primary-menu">
+        {{ page.primary_menu }}
+      </div>
+    {% endif %}
+
+    {% if page.breadcrumb %}
+      <div class="region-breadcrumb">
+        {{ page.breadcrumb }}
+      </div>
+    {% endif %}
+
+    {% if page.content %}
+      <div class="region-content" id="main-content" tabindex="-1">
+        {{ page.content }}
+      </div>
+    {% endif %}
+
+    {% if page.footer_top %}
+      <div class="region-footer-top">
+        {{ page.footer_top }}
+      </div>
+    {% endif %}
+
+     {% if page.footer_middle %}
+      <div class="region-footer-middle">
+        {{ page.footer_middle }}
+      </div>
+    {% endif %}
+
+    {% if page.footer_bottom %}
+      <div class="region-footer-bottom">
+        {{ page.footer_bottom }}
+      </div>
+    {% endif %}
+
+  </div>
+</div>

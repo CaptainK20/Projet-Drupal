@@ -1,0 +1,183 @@
+/*Gère le style des éléments ajouter dans les champs texte long (tableau, formule, image...)*/
+
+/* === STYLE GLOBAL POUR LES CHAMPS TEXTE LONG === */
+.field--type-text-long,
+.field--type-text-with-summary,
+.application-content {
+  line-height: 1.7;
+  font-family: var(--font-body);
+}
+
+/* === FORMULES === */
+/* === Formules MathJax en bloc (équations centrées) === */
+.math-display,
+div.math,
+.MathJax_Display {
+  display: block !important;
+  max-width: 800px !important;
+  width: 100% !important;
+  margin: var(--space-md) auto !important;
+  text-align: center !important;
+  background-color: var(--color-background);
+  padding: var(--space-md);
+  border-left: 8px solid var(--color-tertiary);
+  border-radius: 20px;
+  font-size: var(--text-md);
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Forcer aussi les blocs internes que MathJax ajoute */
+.MathJax {
+  display: inline-block !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+}
+
+
+
+
+/* === CITATIONS === */
+.field--type-text-long blockquote,
+.field--type-text-with-summary blockquote,
+.application-content blockquote {
+  border-left: 8px solid var(--color-tertiary);
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+  background-color: var(--color-background);
+  font-style: italic;
+  color: var(--color-dark);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* === TABLEAUX === */
+.field--type-text-long table,
+.field--type-text-with-summary table,
+.application-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5em 0;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  background-color: white;
+  border: 1px solid #545454c7;
+  overflow: hidden;
+  color: var(--color-dark);
+  border-radius: 20px;
+}
+
+/* === CELLULES EN-TÊTE (1re ligne = thead th) === */
+.field--type-text-long thead th,
+.field--type-text-with-summary thead th,
+.application-content thead th {
+  background-color: var(--color-tertiary);
+  color: var(--color-light);
+  font-weight: bold;
+  border: 1px solid #545454c7;
+  padding: 0.75em 1em;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* === 1ÈRE COLONNE th EN COULEUR (si colonne latérale) === */
+.field--type-text-long tbody th,
+.field--type-text-with-summary tbody th,
+.application-content tbody th {
+  background-color:  #93c35b81;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #545454c7;
+  padding: 0.75em 1em;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* === CELLULES td === */
+.field--type-text-long td,
+.field--type-text-with-summary td,
+.application-content td {
+  border: 1px solid #545454c7;
+  padding: 0.75em 1em;
+  text-align: left;
+  vertical-align: top;
+  background-color: white;
+}
+
+/* === ZÉBRAGE DES CELLULES DE DONNÉES (td uniquement) === */
+.field--type-text-long tbody tr:nth-child(odd) td,
+.field--type-text-with-summary tbody tr:nth-child(odd) td,
+.application-content tbody tr:nth-child(odd) td {
+  background-color: color-mix(in srgb, var(--color-tertiary) 18%, white);
+}
+
+.field--type-text-long tbody tr:nth-child(even) td,
+.field--type-text-with-summary tbody tr:nth-child(even) td,
+.application-content tbody tr:nth-child(even) td {
+  background-color: white;
+}
+
+
+/* === TON STYLE POUR LES BLOCS DE CODE ACCORDÉON === */
+.code-accordion {
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-background);
+  margin: 1em auto; /* centre horizontalement */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1200px; /* largeur maximale */
+  width: 100%; /* prend toute la place disponible jusqu'à 800px */
+}
+
+
+.code-accordion summary {
+  padding: 1em 1em;
+  cursor: pointer;
+  font-weight: bold;
+  background: var(--color-tertiary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  color: var(--color-light);
+  font-family: var(--font-body);
+  list-style: none;
+}
+
+.code-accordion summary .label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.code-accordion summary i.fas {
+  transition: transform 0.3s ease;
+  font-size: var(--text-sm);
+}
+
+.code-accordion[open] summary i.fas {
+  transform: rotate(180deg);
+}
+
+.code-accordion pre {
+  margin: 0;
+  padding: 1em;
+  background: var(--color-background);
+  white-space: pre-wrap;
+  font-family: monospace;
+  position: relative;
+  color: var(--color-dark);
+}
+
+.copy-btn {
+  font-size: var(--space-md);
+  padding: 0.3em 0.6em;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: none;
+  flex-shrink: 0;
+}

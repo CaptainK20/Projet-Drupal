@@ -1,0 +1,28 @@
+{#
+  Personnalisation du rendu des tableaux Views.
+  Ajoute automatiquement la classe "views-table"
+  et un conteneur responsive autour du tableau.
+#}
+
+<div class="views-table-wrapper">
+  <table{{ attributes.addClass('views-table') }}>
+    {% if header %}
+      <thead>
+        <tr>
+          {% for key, column in header %}
+            <th{{ column.attributes }}>{{ column.content }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+    {% endif %}
+    <tbody>
+      {% for row in rows %}
+        <tr{{ row.attributes }}>
+          {% for key, column in row.columns %}
+            <td{{ column.attributes }}>{{ column.content }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

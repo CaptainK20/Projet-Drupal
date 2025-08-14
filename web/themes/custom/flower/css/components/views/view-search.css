@@ -1,0 +1,32 @@
+/* Conteneur global de la vue */
+.view-search {
+  padding: 0 var(--space-lg); /* marge gauche/droite */
+}
+
+/* Espacement entre les résultats */
+.view-search .views-row {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Titre du résultat */
+.view-search .views-field-title {
+  font-size: var(--text-lg);
+  font-weight: bold;
+}
+
+.view-search .views-field-title a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.view-search .views-field-title a:hover {
+  color: var(--color-dark-secondary);
+}
+
+/* Extrait du résultat */
+.view-search .views-field-search-api-excerpt {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  margin-top: var(--space-xs);
+}

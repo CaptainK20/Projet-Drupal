@@ -1,0 +1,131 @@
+/* ================================
+   Language Switcher 
+   Class = #block-flower-languageswitcher (via le module Block Class)
+================================== */
+
+#block-flower-languageswitcher {
+  display: flex;
+  align-items: center;
+}
+
+/* Cacher la liste brute de Drupal */
+#block-flower-languageswitcher .language-switcher-language-url > ul {
+  display: none !important;
+}
+
+/* Wrapper du dropdown */
+#block-flower-languageswitcher .language-switcher-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 100%;
+}
+
+/* Bouton dropdown */
+#block-flower-languageswitcher .language-switcher-dropdown {
+  background: transparent;
+  color: var(--color-light);
+  border: none;
+  font-weight: 500;
+  padding: var(--space-xs) var(--space-md);
+  cursor: pointer;
+  font-family: var(--font-heading);
+  width: max-content;
+  text-align: left;
+  transition: color var(--transition-base);
+  white-space: nowrap;
+  font-size: var(--text-md);
+}
+
+/* Hover bouton */
+#block-flower-languageswitcher .language-switcher-dropdown:hover {
+  color: var(--color-tertiary);
+}
+
+/* Menu déroulant */
+#block-flower-languageswitcher .language-switcher-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
+  transform: none;
+  max-width: 100vw;
+  overflow-x: auto;
+  box-sizing: border-box;
+  background: var(--color-light);
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin-top: var(--space-xs);
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+}
+
+/* Affichage du menu */
+#block-flower-languageswitcher .language-switcher-menu.open {
+  display: block;
+}
+
+/* Liens du menu */
+#block-flower-languageswitcher .language-switcher-menu a {
+  display: inline-block;
+  color: var(--color-dark);
+  padding: 0 var(--space-lg);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-base);
+  line-height: 1.5;
+  font-size: var(--text-md);
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Espacement entre les liens */
+#block-flower-languageswitcher .language-switcher-menu a + a {
+  margin-top: var(--space-md);
+}
+
+/* Hover lien */
+#block-flower-languageswitcher .language-switcher-menu a:hover {
+  color: var(--color-tertiary);
+  font-weight: bold;
+}
+
+/* Trait à gauche au survol */
+#block-flower-languageswitcher .language-switcher-menu a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 1.2em;
+  margin-left: 15px;
+  background-color: var(--color-tertiary);
+  transition: width var(--transition-base);
+  transform: translateY(-50%);
+}
+
+#block-flower-languageswitcher .language-switcher-menu a:hover::before {
+  width: 4px;
+}
+
+/* ================================
+   Responsive (mobile < 480px)
+================================== */
+@media (max-width: 480px) {
+  #block-flower-languageswitcher .language-switcher-dropdown {
+    max-width: 90vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #block-flower-languageswitcher .language-switcher-menu {
+    left: 0;
+    right: auto;
+    min-width: unset;
+    width: 100vw;
+  }
+}

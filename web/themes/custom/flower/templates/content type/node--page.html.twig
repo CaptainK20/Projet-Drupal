@@ -1,0 +1,22 @@
+{{ attach_library('flower/tocjs') }}
+
+{#
+/**
+ * node--page.html.twig
+ * Pour le type de contenu "page" (machine name : page)
+ * - Ajoute le sommaire via TOC.js
+ * - Affiche uniquement le champ field_content
+ */
+#}
+<article{{ attributes.addClass('node', 'node--type-page') }}>
+  
+  {# Sommaire TOC.js #}
+  <div class="toc-wrapper">
+    <div id="toc" class="toc"></div>
+  </div>
+  
+  {# Contenu avec ID pour que TOCbot le repère #}
+  <div id="content" class="application-content">
+    {{ content.field_content }}
+  </div>
+</article>

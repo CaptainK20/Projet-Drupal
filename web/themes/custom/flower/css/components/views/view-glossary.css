@@ -1,0 +1,88 @@
+/* ===========================================
+   STYLE GLOBAL POUR LES TABLEAUX VIEWS
+   Responsive + espacement
+=========================================== */
+
+/* Conteneur du tableau */
+.views-table-wrapper {
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-xl); 
+  margin: 0 auto; 
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: var(--color-light);
+ 
+}
+
+/* Tableau */
+table.views-table {
+  width: 100%;
+  min-width: 600px; 
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--color-light);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  border: none;
+  overflow: hidden;
+}
+
+/* Têtes de colonnes */
+.views-table th {
+  background-color: var(--color-grey);
+  color: var(--color-dark);
+  font-family: var(--font-heading);
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-border);
+  white-space: nowrap;
+}
+
+/* Cellules */
+.views-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+  color: var(--color-dark);
+  font-weight: bold;
+}
+
+.views-table td p {
+  font-weight: normal;
+  text-justify: auto;
+}
+
+/* Première colonne (si besoin, par exemple pour le titre) */
+.views-table td.views-field-title {
+  font-weight: bold;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* Zébrage élégant */
+.views-table tbody tr:nth-child(even) {
+  background-color: var(--color-background-body);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .views-table-wrapper {
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+  }
+  
+  table.views-table {
+    font-size: var(--text-sm);
+    min-width: 500px; 
+  }
+  
+  .views-table th,
+  .views-table td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}

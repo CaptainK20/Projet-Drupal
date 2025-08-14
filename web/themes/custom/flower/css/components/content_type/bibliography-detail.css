@@ -1,0 +1,77 @@
+.biblio-fiche {
+  gap: var(--space-lg);
+ 
+}
+
+.biblio-type {
+  font-size: var(--text-md);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: bold;
+  text-align: center;
+}
+
+.biblio-subtitle {
+  font-style: italic;
+  font-size: var(--text-sm);
+  color: var(--color-dark-secondary);
+  text-align: center;
+}
+
+.biblio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.biblio-col div {
+  font-size: var(--text-md);
+  margin-bottom: var(--space-sm);
+  line-height: 1.4;
+}
+
+.biblio-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+}
+
+.biblio-fiche .section-title {
+  font-size: var(--text-lg);
+  font-weight: bold;
+  color: var(--color-dark);
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.biblio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+.biblio-tags .field__item {
+  background-color: var(--color-grey);
+  color: var(--color-primary);
+  font-size: var(--text-md);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.btn-lien {
+  display: inline-block;
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.btn-lien:hover {
+  color: var(--color-dark-secondary);
+  border-bottom-color: var(--color-dark-secondary);
+}

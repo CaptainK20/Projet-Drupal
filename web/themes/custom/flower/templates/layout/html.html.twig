@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme implementation to display the basic html structure of a single page.
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body{{ attributes }}>
+
+    {# Ajout du contenu accessible avant tout #}
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+
+    {# Appel de la librairie JS du menu burger #}
+    {{ attach_library('flower/burger-menu') }}
+
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>

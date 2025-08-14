@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lunasima:wght@400;700&display=swap');
+
+:root {
+  /* =======================================
+     Couleurs (Palette)
+  ======================================= */
+  --color-primary: #00A3A6;
+  --color-secondary: #ff5722;
+  --color-tertiary: #93C35B;
+  --color-accent: #697D5B;
+  --color-light: #ffffff;
+  --color-dark: #1E1E1E;
+  --color-background: #ffffff;
+  --color-background-body: #F4F5F9;
+  --color-border: #c4c4c4;
+  --color-grey: #f5f9fb;
+  --color-dark-secondary:#BE0D13; /*pour les survole de bouton ou de lien*/
+  --color-primary-transparent: rgba(0, 163, 166, 0.6); /* correspond à #00A3A6 avec opacité */
+
+  /* =======================================
+     Typographie
+  ======================================= */
+  --font-heading: 'Libre Baskerville', block; /*Pour les titre*/
+  --font-body: 'Lunasima', regular; /*Pour les paragraphes*/
+
+  /* =======================================
+     Tailles de texte (recommandé en rem pour le responsive)
+  ======================================= */
+  --text-xs: 0.75rem;        /* 12px - très petit texte */
+  --text-sm: 0.875rem;       /* 14px - petit texte */
+  --text-md: 1.15rem;        /* 16px - texte par défaut */
+  --text-lg: 1.25rem;        /* 20px - sous-titres, labels */
+  --text-xl: 1.5rem;         /* 24px - titres de section */
+  --text-xxl: 2rem;          /* 32px - grand titre */
+  --text-xxxl: 3rem;       /*40px 
+  --text-display: 3.1rem;  /* 50px - très grand titre (hero) */
+
+  /* =======================================
+     Espacements
+  ======================================= */
+  
+  --space-xxs: 0.125rem; /* 2px - très fin */
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 4rem;     /* 64px */
+  --space-xxl: 6rem;     /* 96px - très grand espacement */
+  --space-xxxl: 8rem; /* 128px - espacement de très grande section */
+
+  /* =======================================
+     Autres tokens utiles
+  ======================================= */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 20px;
+  --radius-xxxl: 24px;
+  --transition-base: 0.3s ease-in-out;
+}

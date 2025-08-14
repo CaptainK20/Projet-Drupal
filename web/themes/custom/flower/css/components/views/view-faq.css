@@ -1,0 +1,70 @@
+/* === LISTE DES QUESTIONS === */
+.view-faq .item-list ul {
+  list-style: none;
+  padding: var(--space-lg);
+  margin: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* === ITEM INDIVIDUEL === */
+.view-faq .item-list ul > li {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  margin: var(--space-lg);
+}
+
+/* === QUESTION === */
+.view-faq .views-field-title {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5rem; /* ✅ plus gros */
+  padding: 1.2rem 3rem;
+  position: relative;
+  transition: color 0.3s;
+  background-color: transparent;
+}
+
+/* === Symbole + / − === */
+.view-faq .views-field-title::before {
+  content: "+";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem; /* ✅ symbole plus grand */
+  color: var(--color-secondary);
+  transition: transform 0.3s;
+}
+
+/* === Style actif de la question ouverte === */
+.view-faq .faq-open .views-field-title {
+  color: var(--color-secondary);
+}
+
+.view-faq .faq-open .views-field-title::before {
+  content: "−";
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* === RÉPONSE === */
+.view-faq .views-field-field-answer {
+  display: none;
+  padding:  1.5rem;
+  background-color: #f9f9f9;
+  border-left: 3px solid var(--color-secondary);
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* === Texte dans la réponse === */
+.view-faq .views-field-field-answer p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* === Affichage quand ouvert === */
+.view-faq .faq-open .views-field-field-answer {
+  display: block;
+}

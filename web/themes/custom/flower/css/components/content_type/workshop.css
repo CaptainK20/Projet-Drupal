@@ -1,0 +1,171 @@
+/* === TITRE === */
+.workshop-header {
+ font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.5vw + 1rem, var(--text-xxl)); /* fluide */
+  color: var(--color-dark);
+  padding: clamp(var(--space-md), 2vw, var(--space-lg))
+           clamp(var(--space-lg), 4vw, var(--space-xxl));
+}
+
+/* === BANNIÈRE === */
+.workshop-banner img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+/* === INFOS CLÉS === */
+.workshop-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--color-light);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-md);
+}
+
+.workshop-info .info-item i {
+  color: var(--color-dark);
+  font-size: 1.2em;
+}
+
+.workshop-info .info-item strong {
+  color: var(--color-dark);
+  margin-right: var(--space-xs);
+}
+
+
+/* Wrapper des badges dans la barre d’infos */
+.info-badges {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.info-badges .badges {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+/* badge */
+.badge-domain {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  font-size: clamp(0.85rem, 0.7vw + 0.6rem, var(--text-md));
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1.4;
+  text-decoration: none; 
+}
+
+
+/* === LAYOUT === */
+.workshop-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: clamp(var(--space-lg), 4vw, var(--space-xl)); 
+  margin-top: var(--space-sm);
+  padding: 0 clamp(var(--space-lg), 5vw, var(--space-lg)); 
+}
+
+/* === COLONNE GAUCHE === */
+.workshop-main .workshop-section {
+ padding: var(--space-sm) var(--space-md);
+
+}
+
+.workshop-main .workshop-section h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  border-bottom: 2px solid var(--color-dark);
+  padding-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+/* === COLONNE DROITE === */
+.workshop-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+ margin-top: var(--space-md); 
+}
+
+.aside-card {
+  background: var(--color-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg) var(--space-xl);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.aside-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.aside-price-scale {
+ font-size: var(--text-xl);
+  font-weight: bold;
+  color: var(--color-dark);
+  margin: var(--space-md);
+}
+
+/* Prix */
+.price-card .aside-price {
+  font-size: var(--text-xl);
+  font-weight: bold;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.btn-inscription {
+  display: inline-block;
+  width: 100%;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--color-secondary);
+  color: var(--color-light);
+  font-size: var(--text-md);
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-base), transform var(--transition-base);
+}
+
+.btn-inscription:hover {
+  background: var(--color-dark-secondary);
+  transform: translateY(-2px);
+  color:var(--color-light);
+}
+
+.workshop-location .location-description {
+  margin-bottom: var(--space-md);
+  font-size: var(--text-md);
+  line-height: 1.6;
+}
+
+.workshop-location .location-map img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .workshop-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,119 @@
+<article class="profil-chercheur biblio-fiche">
+
+  <div class="profil-header">
+
+    <div class="profil-photo-nom">
+      {% if content.field_document_type is defined and content.field_document_type|render|trim is not empty %}
+        <div class="biblio-type">{{ content.field_document_type }}</div>
+      {% endif %}
+
+      <div class="profil-nom">{{ label }}</div>
+
+      {% if content.field_subtitle is defined and content.field_subtitle|render|trim is not empty %}
+        <div class="biblio-subtitle">{{ content.field_subtitle }}</div>
+      {% endif %}
+
+      {% if content.field_cover_image is defined and content.field_cover_image|render|trim is not empty %}
+        <div class="profil-photo">{{ content.field_cover_image }}</div>
+      {% endif %}
+    </div>
+
+    <div class="profil-box biblio-grid">
+      <div class="biblio-col">
+        {% if content.field_author is defined and content.field_author|render|trim is not empty %}
+          <div>
+            <span class="section-title">Auteur</span>
+            {{ content.field_author }}
+          </div>
+        {% endif %}
+
+        {% if content.field_editor is defined and content.field_editor|render|trim is not empty %}
+          <div>
+            <span class="section-title">Éditeur</span>
+            {{ content.field_editor }}
+          </div>
+        {% endif %}
+
+        {% if content.field_review is defined and content.field_review|render|trim is not empty %}
+          <div>
+            <span class="section-title">Revue</span>
+            {{ content.field_review }}
+          </div>
+        {% endif %}
+
+        {% if content.field_place is defined and content.field_place|render|trim is not empty %}
+          <div>
+            <span class="section-title">Lieu</span>
+            {{ content.field_place }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="biblio-col">
+        {% if content.field_year_publication is defined and content.field_year_publication|render|trim is not empty %}
+          <div>
+            <span class="section-title">Année</span>
+            {{ content.field_year_publication }}
+          </div>
+        {% endif %}
+
+        {% if content.field_identifier is defined and content.field_identifier|render|trim is not empty %}
+          <div>
+            <span class="section-title">Identifiant</span>
+            {{ content.field_identifier }}
+          </div>
+        {% endif %}
+
+        {% if content.field_collection is defined and content.field_collection|render|trim is not empty %}
+          <div>
+            <span class="section-title">Collection</span>
+            {{ content.field_collection }}
+          </div>
+        {% endif %}
+
+        {% if content.field_volume is defined and content.field_volume|render|trim is not empty %}
+          <div>
+            <span class="section-title">Volume</span>
+            {{ content.field_volume }}
+          </div>
+        {% endif %}
+
+        {% if content.field_difficulty_level is defined and content.field_difficulty_level|render|trim is not empty %}
+          <div>
+            <span class="section-title">Niveau</span>
+            {{ content.field_difficulty_level }}
+          </div>
+        {% endif %}
+
+        {% if content.field_thematic is defined and content.field_thematic|render|trim is not empty %}
+          <div>
+            <span class="section-title">Thématique</span>
+            <div class="biblio-tags">{{ content.field_thematic }}</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if content.field_summary is defined and content.field_summary|render|trim is not empty %}
+    <div class="profil-section">
+      <div class="section-title">Résumé</div>
+      {{ content.field_summary }}
+    </div>
+  {% endif %}
+
+ {% if content.field_link is defined and content.field_link['#items'] is defined %}
+  {% set item = content.field_link['#items'][0] %}
+  {% if item.url is defined %}
+    <div class="profil-section">
+      <div class="section-title">Accès</div>
+      <a class="btn-lien" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+           Consulter le document
+      </a>
+    </div>
+  {% endif %}
+{% endif %}
+
+
+
+</article>

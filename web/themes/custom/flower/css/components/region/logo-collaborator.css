@@ -1,0 +1,19 @@
+
+#block-flower-logo-collaborator > div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  padding: var(--space-sm) 0;
+}
+
+#block-flower-logo-collaborator img {
+  max-height: 30px;
+  width: auto;
+}
+
+#block-flower-logo-collaborator img[alt="Logo république française"] {
+  max-height: 65px;
+  width: auto;
+}

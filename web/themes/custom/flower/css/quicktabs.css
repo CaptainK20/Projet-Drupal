@@ -1,0 +1,74 @@
+/* ===== QUICKTABS – style commun à tout le site ===== */
+.quicktabs-wrapper {
+  font-family: var(--font-heading);
+}
+
+/* Barre d’onglets */
+.quicktabs-wrapper .quicktabs-tabs {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  gap: var(--space-lg);
+  list-style: none;
+  padding: 0 var(--space-md);
+  margin: 0;
+  min-height: 60px; 
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  background: var(--color-light);
+}
+
+/* Chaque élément de la barre */
+.quicktabs-wrapper .quicktabs-tabs li {
+  margin: 0;
+  display: flex;
+  align-items: center; 
+}
+
+/* Onglet */
+.quicktabs-wrapper .quicktabs-tabs a {
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  height: 100%;                
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--text-md);
+  color: var(--color-dark);
+  background: var(--color-light);
+  border: none;
+  transition: var(--transition-base);
+  text-decoration: none;
+}
+
+.quicktabs-wrapper .quicktabs-tabs a:hover {
+  color: var(--color-secondary)!important;
+}
+
+/* Onglet actif */
+.quicktabs-wrapper .quicktabs-tabs li.active a {
+  color: var(--color-secondary)!important;
+  font-weight: bold !important;
+}
+
+/* Contenu */
+.quicktabs-wrapper .quicktabs-main {
+  background: var(--color-background);
+  padding: var(--space-xl);
+}
+
+.quicktabs-wrapper .quicktabs-main h1,
+.quicktabs-wrapper .quicktabs-main h2 {
+  margin-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quicktabs-wrapper .quicktabs-tabs {
+    flex-wrap: wrap;
+    min-height: auto; /* retire la hauteur fixe en mobile */
+  }
+  .quicktabs-wrapper .quicktabs-tabs a {
+    font-size: var(--text-sm);
+    padding: var(--space-xs) var(--space-sm);
+    height: auto;
+  }
+}

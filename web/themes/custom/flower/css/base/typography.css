@@ -1,0 +1,97 @@
+/* =======================================
+   Typographie : styles de base HTML
+======================================= */
+
+
+
+/* TITRES */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.2;
+  
+}
+
+
+
+
+h1 {
+  margin-top: var(--space-lg);
+  font-style: bold;
+  font-size: var(--text-xxl);
+  position: relative;
+}
+
+
+/* PARAGRAPHES */
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-dark);
+  text-align: justify;
+  font-size: var(--text-lg);
+}
+
+/* LISTES */
+
+ul, ol {
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* CITATIONS */
+
+blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-md);
+  font-style: italic;
+  color: var(--color-accent);
+  margin: var(--space-md) 0;
+}
+
+/* CODE INLINE ET BLOCS */
+
+code {
+  font-family: monospace;
+  font-size:var(--text-sm);
+  color: var(--color-dark);
+}
+
+pre {
+  padding: var(--space-md);
+  overflow-x: auto;
+  margin-bottom: var(--space-md);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-secondary);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--color-dark-secondary);
+}
+
+/* === DÉFILEMENT FLUIDE NATIF === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === OFFSET POUR ANCRE AVEC HEADER FIXE === */
+#content h2,
+#content h3 {
+  scroll-margin-top: 100px; /* adapte à la hauteur réelle du header */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+

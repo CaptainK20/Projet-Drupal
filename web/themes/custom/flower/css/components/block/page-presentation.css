@@ -1,0 +1,92 @@
+/* === BANNIÈRE HERO === */
+.page_presentation {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  height: 500px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* === IMAGE DE FOND === */
+.page_presentation > div:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page_presentation img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* === CONTENU SUPERPOSÉ === */
+.page_presentation .overlay-content {
+  position: absolute;
+  bottom: 0;
+  right: var(--space-xxxl);
+  background-color: var( --color-primary-transparent);
+  padding: var(--space-xl);
+  color: var(--color-light);
+  max-width: 30%; /* réduit sur desktop */
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: var(--text-xxl);
+  font-family: var(--font-heading);
+  z-index: 2;
+}
+
+.page_presentation .overlay-content p {
+  font-size: var(--text-lg);
+  line-height: 1.5;
+  font-family: var(--font-body);
+  color: var(--color-light);
+}
+
+/* === RESPONSIVE MOBILE === */
+@media (max-width: 768px) {
+  .page_presentation {
+    height: auto;
+  }
+
+  .page_presentation > div:first-child {
+    position: relative;
+    height: auto;
+  }
+
+  .page_presentation img {
+    height: auto;
+  }
+
+  .page_presentation .overlay-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* centre horizontalement */
+    width: 80%; /* réduit sur mobile */
+    background-color: var(--color-primary);
+    padding: var(--space-md);
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: var(--color-light);
+  }
+
+  .page_presentation .overlay-content .titre-section {
+    font-size: var(--text-xl);
+    color: var(--color-light);
+  }
+
+  .page_presentation .overlay-content p {
+    font-size: var(--text-sm);
+    color: var(--color-light);
+  }
+}

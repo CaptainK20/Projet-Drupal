@@ -1,0 +1,109 @@
+/* ================================
+   Conteneur principal
+================================ */
+.conference-detail {
+  width: 100%;
+  max-width: 1200px; /* limite centrale */
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--color-light);
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  color: var(--color-dark);
+}
+
+/* ================================
+   Bannière responsive
+================================ */
+.conference-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* hauteur max */
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* ================================
+   Meta infos (date, lieu, langue, niveau)
+================================ */
+.conference-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.conference-field {
+  flex: 1 1 200px;
+  background: var(--color-background);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-md);
+  box-sizing: border-box;
+}
+
+.conference-field strong {
+  display: block;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+/* ================================
+   Sections descriptives
+================================ */
+.conference-section {
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+  padding: var(--space-md);
+  background: var(--color-background);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-xs);
+  box-sizing: border-box;
+}
+
+.conference-section strong {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--color-primary);
+  font-size: var(--text-lg);
+}
+
+/* ================================
+   Lien "En savoir plus"
+================================ */
+.conference-link {
+  display: inline-block;
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color var(--transition-base);
+}
+
+.conference-link:hover {
+  background: var(--color-dark-primary);
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 1024px) {
+  .conference-detail {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .conference-meta {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .conference-banner img {
+    max-height: 250px;
+  }
+}

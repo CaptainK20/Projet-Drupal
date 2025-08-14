@@ -1,0 +1,132 @@
+<article{{ attributes.addClass('node', 'node--type-workshop') }}>
+
+  <header class="workshop-header">
+    <h1>{{ label }}</h1>
+  </header>
+
+  <div class="workshop-banner">
+    {{ content.field_banner|render }}
+  </div>
+
+  <div class="workshop-info">
+  <div class="info-item"><i class="fa-solid fa-location-dot"></i> {{ content.field_place|render }}</div>
+  <div class="info-item"><i class="fa-solid fa-calendar-days"></i> {{ content.field_date|render }}</div>
+  <div class="info-item"><i class="fa-solid fa-user"></i> {{ content.field_places_available|render }}</div>
+  
+  {# Domaine en badges #}
+{% if node.field_domain is defined and node.field_domain|length %}
+  <div class="info-item info-badges">
+    <strong>Domaine :</strong>
+    <div class="badges">
+      {% for item in node.field_domain %}
+        {% set term = item.entity %}
+        {% if term %}
+          <span class="badge-domain">
+            {{ term.label }}
+          </span>
+          {# Si tu veux des liens vers les pages de taxonomie, remplace par :
+          <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.id}) }}" class="badge-domain">
+            {{ term.label }}
+          </a>
+          #}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{# Thématique en badges #}
+{% if node.field_thematic is defined and node.field_thematic|length %}
+  <div class="info-item info-badges">
+    <strong>Thématique :</strong>
+    <div class="badges">
+      {% for item in node.field_thematic %}
+        {% set term = item.entity %}
+        {% if term %}
+          <span class="badge-domain">
+            {{ term.label }}
+          </span>
+          {# Variante lien :
+          <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.id}) }}" class="badge-domain">
+            {{ term.label }}
+          </a>
+          #}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+  
+  <div class="info-item"><i class="fa-solid fa-language"></i> {{ content.field_language|render }}</div>
+  
+  <div class="info-item difficulty"><strong>Niveau :</strong> {{ content.field_difficulty_level|render }}</div>
+</div>
+
+
+
+  <div class="workshop-layout">
+    
+    <main class="workshop-main">
+      <section class="workshop-section">
+        <h2>Présentation</h2>
+        {{ content.field_workshop_presentation|render }}
+      </section>
+
+      <section class="workshop-section">
+        <h2>Objectifs</h2>
+        {{ content.field_workshop_objectives|render }}
+      </section>
+
+      <section class="workshop-section">
+        <h2>Intervenants</h2>
+        {{ content.field_speakers|render }}
+      </section>
+
+      <section class="workshop-section">
+        <h2>Programmes</h2>
+        {{ content.field_program|render }}
+      </section>
+
+      <section class="workshop-section workshop-location">
+        <h2>Lieu de l’atelier</h2>
+        <div class="location-description">
+            {{ content.field_location_description|render }}
+        </div>
+        <div class="location-map">
+            {{ content.field_location|render }}
+        </div>
+        </section>
+
+    </main>
+
+    <aside class="workshop-aside">
+
+      {% if content.field_price is defined and content.field_price is not empty %}
+        <section class="aside-card price-card">
+          {% if attribute(content, 'field_price_scale') is defined and attribute(content, 'field_price_scale') is not empty %}
+            <div class="aside-price-scale">
+              {{ attribute(content, 'field_price_scale')|render }}
+            </div>
+          {% endif %}
+          <div class="aside-price">
+            {{ content.field_price|render }}
+          </div>
+            {% if content.field_registration_link is defined and content.field_registration_link is not empty %}
+            {% set lien = content.field_registration_link[0]['#url'] %}
+            <div class="aside-cta">
+                <a href="{{ lien }}" class="btn-inscription" target="_blank" rel="noopener">
+                Inscription
+                </a>
+            </div>
+            {% endif %}
+
+
+        </section>
+      {% endif %}
+
+    
+
+    </aside>
+  </div>
+</article>

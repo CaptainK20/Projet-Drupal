@@ -1,0 +1,14 @@
+#block-flower-footerbranding {
+  max-width: 450px;
+  line-height: 1.5;
+  font-family: var(--font-body);
+  color: var(--color-light);
+  font-size: var(--text-sm); 
+}
+
+#block-flower-footerbranding img {
+  height: 80px;
+  width: auto;
+  margin-bottom: var(--space-sm);
+}
+

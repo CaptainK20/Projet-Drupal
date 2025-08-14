@@ -1,0 +1,29 @@
+.speaker-card {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.speaker-photo img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--color-grey);
+}
+
+.speaker-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.speaker-name {
+  font-weight: bold;
+  font-size: var(--text-md);
+}
+
+.speaker-description {
+  font-size: var(--text-md);
+  line-height: 1.5;
+}

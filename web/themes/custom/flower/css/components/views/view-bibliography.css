@@ -1,0 +1,109 @@
+/* === Grille des cartes (inchangée) === */
+.view-bibliography .views-view-responsive-grid--horizontal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+  justify-content: center;
+  padding: var(--space-xl) ;
+}
+
+/* === Carte compacte === */
+.view-bibliography .views-view-responsive-grid__item-inner {
+  background: var(--color-light);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm) var(--space-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  text-align: left;
+  min-width: 260px;
+}
+
+/* === Suppression du min-height === */
+.view-bibliography .views-view-responsive-grid__item-inner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* === Image plus discrète === */
+.view-bibliography .views-field-field-cover-image {
+  align-self: center;
+  margin: var(--space-sm) 0;
+}
+
+.view-bibliography .views-field-field-cover-image img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-xs);
+  border: 1px solid var(--color-border);
+}
+
+/* === Badge type document réduit === */
+.view-bibliography .views-field-field-document-type .field-content {
+  font-size: var(--text-xs);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-xs);
+ 
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* === Titres et champs allégés === */
+.view-bibliography .views-field-title .field-content {
+  font-size: var(--text-md);
+  font-weight: bold;
+  margin-bottom: var(--space-2xs);
+}
+
+.view-bibliography .views-field-field-subtitle .field-content {
+  font-size: var(--text-sm);
+  font-style: italic;
+  margin-bottom: var(--space-xs);
+}
+
+.view-bibliography .views-field-field-author .field-content,
+.view-bibliography .views-field-field-director .field-content,
+.view-bibliography .views-field-field-editor .field-content,
+.view-bibliography .views-field-field-year-publication .field-content {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-sm);
+  color: var(--color-dark);
+  font-family: var(--font-body);
+}
+
+/* === Bouton plus petit === */
+.view-bibliography .views-field-view-node a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: var(--space-sm);
+  padding: var(--space-xs) var(--space-md);
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: var(--text-md);
+  font-weight: 500;
+  transition: background-color var(--transition-base);
+}
+
+.view-bibliography .views-field-view-node a::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f138";
+  margin-left: var(--space-xs);
+}
+
+.view-bibliography .views-field-view-node a:hover {
+  color: var(--color-dark-secondary);
+  font-weight: bold;
+}
+
+.view-bibliography .views-field-view-node a:hover::after {
+  color: var(--color-dark-secondary);
+  transform: scale(1.5);
+  font-weight: bold;
+}

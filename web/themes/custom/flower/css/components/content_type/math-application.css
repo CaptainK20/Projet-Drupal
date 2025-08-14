@@ -1,0 +1,104 @@
+/* === IMAGE BANNIÈRE FULL WIDTH === */
+.banner-full {
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+.banner-full img {
+  width: 100%;
+  height: clamp(420px, 40vh, 400px); 
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* === TITRE PRINCIPAL === */
+.main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.5vw + 1rem, var(--text-xxl)); /* fluide */
+  color: var(--color-dark);
+  padding: clamp(var(--space-md), 2vw, var(--space-lg))
+           clamp(var(--space-lg), 4vw, var(--space-xxl));
+}
+
+/* === INFOS GÉNÉRALES === */
+.row-infos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(var(--space-md), 2vw, var(--space-xl));
+  padding: clamp(var(--space-md), 2vw, var(--space-xl)) 0;
+  justify-content: center;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  background: var(--color-light);
+}
+
+/* === UN BLOC D'INFO === */
+.info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: clamp(var(--text-md), 1.2vw + 0.75rem, var(--text-lg));
+  flex-wrap: wrap;
+}
+
+/* === LIBELLÉ === */
+.label {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* === VALEUR === */
+.value {
+  font-weight: normal;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  line-height: 1.5;
+}
+
+/* === BADGE DES DOMAINES === */
+.badge-domain {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  font-size: clamp(0.85rem, 0.7vw + 0.6rem, var(--text-md));
+  font-weight: 600;
+  white-space: nowrap; /* évite les retours sur desktop */
+  line-height: 1.4;
+}
+
+/* === CONTENU GLOBAL === */
+.application-content {
+  padding: var(--space-md) var(--space-lg);
+}
+
+/* =========================
+   BREAKPOINTS
+========================= */
+
+/* ≤ 1024px (tablette paysage) */
+@media (max-width: 1024px) {
+  .row-infos { gap: var(--space-lg); }
+}
+
+/* ≤ 768px (tablette / mobile) */
+@media (max-width: 768px) {
+  .row-infos { box-shadow: none; } /* allège sur mobile */
+  .info {
+    width: 100%;
+    justify-content: center; /* empile proprement */
+    text-align: center;
+  }
+  .badge-domain {
+    white-space: normal; /* autorise le retour à la ligne si long */
+  }
+}
+
+/* ≤ 480px (petit mobile) */
+@media (max-width: 480px) {
+  .application-content { padding: var(--space-md); }
+}

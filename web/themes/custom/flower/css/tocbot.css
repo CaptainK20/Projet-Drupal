@@ -1,0 +1,88 @@
+/* === CONTENEUR GLOBAL DU SOMMAIRE À GAUCHE === */
+.toc-wrapper {
+  width: 350px;
+  float: left;
+  margin-right: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* === TITRE “SOMMAIRE” === */
+.toc-wrapper::before {
+  content: "Sommaire";
+  display: block;
+  text-align: center;
+  background: var(--color-secondary);
+  color: white;
+  font-weight: bold;
+  font-size: var(--text-xl);
+  font-family: var(--font-heading);
+  padding: var(--space-md);
+}
+
+/* === LISTE TOC === */
+#toc {
+  padding: var(--space-sm);
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+#toc ol, 
+#toc ul {
+  list-style: none;
+  padding-left: var(--space-sm);
+}
+#toc li::marker { content: none; }
+
+/* === LIENS TOC === */
+#toc .toc-link {
+  display: block;
+  color: var(--color-dark);
+  text-decoration: none;
+  padding: 0.4rem var(--space-sm);
+  border-left: 3px solid transparent;
+  transition: all var(--transition-base);
+  font-size: var(--text-lg);
+}
+
+#toc .toc-link:hover {
+  background-color: var(--color-light);
+  border-left: 3px solid var(--color-secondary);
+}
+
+/* === LIEN ACTIF === */
+#toc .is-active-link {
+  color: var(--color-secondary);
+  font-weight: bold;
+  border-left: 3px solid var(--color-secondary);
+  background: var(--color-light);
+}
+
+/* === INDENTATION DES NIVEAUX INFÉRIEURS === */
+#toc .toc-list .toc-list {
+  padding-left: var(--space-md);
+}
+
+/* === CONTENU PRINCIPAL DÉCALÉ === */
+.application-content {
+  margin-left: calc(280px + var(--space-xl));
+}
+
+@media (max-width: 992px) {
+  .toc-wrapper {
+    float: none;
+    width: 100%;
+    position: static;
+    margin-right: 0;
+  }
+  .application-content {
+    margin-left: 0;
+  }
+}

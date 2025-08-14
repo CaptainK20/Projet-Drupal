@@ -1,0 +1,89 @@
+<article class="conference-detail">
+
+  {# Image principale #}
+  {% if content.field_banner|render|trim is not empty %}
+    <div class="conference-banner">
+      {{ content.field_banner }}
+    </div>
+  {% endif %}
+
+  <div class="conference-meta">
+    {# Date #}
+    {% if content.field_date|render|trim is not empty %}
+      <div class="conference-field">
+        <strong>Date :</strong> {{ content.field_date }}
+      </div>
+    {% endif %}
+
+    {# Lieu #}
+    {% if content.field_place|render|trim is not empty %}
+      <div class="conference-field">
+        <strong>Lieu :</strong> {{ content.field_place }}
+      </div>
+    {% endif %}
+
+    {# Langue #}
+    {% if content.field_language|render|trim is not empty %}
+      <div class="conference-field">
+        <strong>Langue :</strong> {{ content.field_language }}
+      </div>
+    {% endif %}
+
+    {# Niveau de difficulté #}
+    {% if content.field_difficulty_level|render|trim is not empty %}
+      <div class="conference-field">
+        <strong>Niveau :</strong> {{ content.field_difficulty_level }}
+      </div>
+    {% endif %}
+  </div>
+
+  {# Description #}
+  {% if content.field_description|render|trim is not empty %}
+    <div class="conference-section">
+      <strong>Description :</strong>
+      {{ content.field_description }}
+    </div>
+  {% endif %}
+
+  {# Domaines #}
+  {% if content.field_domain|render|trim is not empty %}
+    <div class="conference-section">
+      <strong>Domaines :</strong>
+      {{ content.field_domain }}
+    </div>
+  {% endif %}
+
+  {# Thématiques #}
+  {% if content.field_thematic|render|trim is not empty %}
+    <div class="conference-section">
+      <strong>Thématiques :</strong>
+      {{ content.field_thematic }}
+    </div>
+  {% endif %}
+
+  {# Intervenants #}
+  {% if content.field_speakers|render|trim is not empty %}
+    <div class="conference-section">
+      <strong>Intervenants :</strong>
+      {{ content.field_speakers }}
+    </div>
+  {% endif %}
+
+  {# Document associé #}
+  {% if content.field_document|render|trim is not empty %}
+    <div class="conference-section">
+      <strong>Document :</strong>
+      {{ content.field_document }}
+    </div>
+  {% endif %}
+
+  {# Lien vers la conférence (En savoir plus) #}
+  {% if content.field_link|render|trim is not empty %}
+    <div class="conference-section">
+      <a href="{{ content.field_link[0]['#url'] }}" target="_blank" class="conference-link">
+        En savoir plus
+      </a>
+    </div>
+  {% endif %}
+
+</article>

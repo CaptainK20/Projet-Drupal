@@ -1,0 +1,49 @@
+{{ attach_library('flower/tocjs') }}
+
+<article{{ attributes.addClass('application-node') }}>
+
+  <h1 class="main-title">{{ label }}</h1>
+
+  <div class="banner-full">
+    {{ content.field_banner }}
+  </div>
+
+  <div class="row-infos">
+    <div class="info">
+      <span class="label">Publié le :</span>
+      <span class="value">{{ node.created.value|date("d F Y") }}</span>
+    </div>
+
+    {% if node.field_domain is not empty %}
+      <div class="info">
+        <span class="label">Domaines :</span>
+        <span class="value">
+          {% for term in node.field_domain %}
+            <span class="badge-domain">{{ term.entity.label }}</span>
+          {% endfor %}
+        </span>
+      </div>
+    {% endif %}
+
+    <div class="info">
+      <span class="label">Écrit par :</span>
+      <span class="value">{{ node.uid.entity.label }}</span>
+    </div>
+
+    <div class="info">
+      <span class="label">Niveau de difficulté :</span>
+      <span class="value">{{ content.field_difficulty_level }}</span>
+    </div>
+  </div>
+
+  {# Sommaire TOC.js #}
+  <div class="toc-wrapper">
+    <div id="toc" class="toc"></div>
+  </div>
+
+  {# Contenu avec ID pour que TOCbot le repère #}
+  <div id="content" class="application-content">
+    {{ content.field_content }}
+  </div>
+
+</article>

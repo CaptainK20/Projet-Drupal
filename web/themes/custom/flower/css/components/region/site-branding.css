@@ -1,0 +1,9 @@
+/* ================================
+   LOGO
+================================== */
+
+#block-flower-sitebranding img {
+  height: 100px;
+  width: auto;
+  display: block;
+}

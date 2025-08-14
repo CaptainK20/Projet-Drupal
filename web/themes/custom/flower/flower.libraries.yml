@@ -1,0 +1,79 @@
+global-styling:
+  version: 1.x
+  css:
+    base:
+      css/base/variables.css: {}
+      css/base/typography.css: {}
+
+    layout:
+      css/layout/regions.css: {}
+      
+    component:
+    #Region
+      css/components/region/search-form.css: {}
+      css/components/region/language-switcher.css: {}
+      css/components/region/secondary-navigation.css: {}
+      css/components/region/main-navigation.css: {}
+      css/components/region/footer-branding.css: {}
+      css/components/region/footer-quick-links.css: {}
+      css/components/region/social-media.css: {}
+      css/components/region/logo-collaborator.css: {}
+      css/components/region/breadcrumbs.css: {}
+      css/components/region/site-branding.css: {}
+
+    #Content type
+      css/components/content_type/math-application.css: {}
+      css/components/content_type/profil-researcher.css: {}
+      css/components/content_type/bibliography-detail.css: {}
+      css/components/content_type/viability_tutorial.css: {}
+      css/components/content_type/workshop.css: {} 
+      css/components/content_type/conference.css: {}   
+    #Field
+      css/components/field/application-content.css: {}
+
+    #Paragraph
+      css/components/paragraph/speakers.css: {}
+
+
+    #Views
+      css/components/views/view-application.css: {}
+      css/components/views/view-researcher.css: {}
+      css/components/views/view-glossary.css: {}
+      css/components/views/view-form-filter.css: {}
+      css/components/views/view-bibliography.css: {}
+      css/components/views/view-thematics.css: {}
+      css/components/views/view-page.css: {}
+      css/components/views/view-explorer.css: {}
+      css/components/views/view-atelier.css: {}
+      css/components/views/view-conference-past.css: {}
+      css/components/views/view-formation.css: {}
+      css/components/views/view-faq.css: {}
+      css/components/views/pager.css: {}
+      css/components/views/view-conference-now.css: {}
+      css/components/views/view-news.css: {}
+      css/components/views/view-search.css: {}
+      
+    
+    #Blocks
+      css/components/block/hero-banner.css: {}
+      css/components/block/page-presentation.css: {}
+
+    #Sommaire (tocbot)
+      css/tocbot.css: {}
+
+    
+    #onglets Quicktabs
+      css/quicktabs.css: {}
+
+
+  js:
+    js/language-switcher.js: {}
+    js/mathjax.js: {}
+    js/burger-menu.js: {}
+    js/accordion_pre.js: {}
+    js/faq.js: {}
+    js/tocbot.min.js: {}
+    js/init-toc.js: {}
+    
+  dependencies:
+    - core/jquery

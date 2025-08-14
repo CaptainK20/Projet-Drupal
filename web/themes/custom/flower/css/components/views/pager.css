@@ -1,0 +1,74 @@
+/* === Pagination personnalisée Drupal Views === */
+.pager {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-lg) 0;
+  font-family: var(--font-body);
+}
+
+.pager__items {
+  display: flex;
+  gap: var(--space-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Pages numérotées = ronds */
+.pager__item a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: var(--text-lg);
+  color: var(--color-dark);
+  background: transparent;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+/* Actif */
+.pager__item.is-active a {
+  background: var(--color-secondary);
+  color: var(--color-light);
+  font-weight: bold;
+}
+
+/* Hover */
+.pager__item a:hover {
+  background: var(--color-secondary);
+  color: var(--color-light);
+}
+
+/* Précédent / Suivant / Premier / Dernier = rectangles arrondis */
+.pager__item--first a,
+.pager__item--previous a,
+.pager__item--next a,
+.pager__item--last a {
+  width: auto;
+  padding: 0 var(--space-md);
+  height: 40px;
+  border-radius: 20px;
+  background: transparent;
+}
+
+/* Hover pour Précédent/Suivant/Premier/Dernier */
+.pager__item--first a:hover,
+.pager__item--previous a:hover,
+.pager__item--next a:hover,
+.pager__item--last a:hover {
+  background: var(--color-secondary);
+  color: var(--color-light);
+}
+
+/* Accessibilité */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}

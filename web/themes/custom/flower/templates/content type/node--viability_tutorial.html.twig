@@ -1,0 +1,83 @@
+{{ attach_library('flower/tocjs') }}
+
+<article{{ attributes.addClass('viability-tutorial-node') }}>
+
+  <h1 class="main-title">{{ label }}</h1>
+
+  <div class="banner-full">
+    {{ content.field_banner }}
+  </div>
+
+  <div class="tutorial-row-infos">
+    <div class="tutorial-info">
+      <span class="tutorial-info__label">Publié le :</span>
+      <span class="tutorial-info__value">{{ node.created.value|date("d F Y") }}</span>
+    </div>
+
+    {% if node.field_domain is not empty %}
+      <div class="tutorial-info">
+        <span class="tutorial-info__label">Domaines :</span>
+        <span class="tutorial-info__value">
+          {% for term in node.field_domain %}
+            <span class="tutorial-badge--domain">{{ term.entity.label }}</span>
+          {% endfor %}
+        </span>
+      </div>
+    {% endif %}
+
+    {% if node.field_thematic is not empty %}
+      <div class="tutorial-info">
+        <span class="tutorial-info__label">Thématiques :</span>
+        <span class="tutorial-info__value">
+          {% for term in node.field_thematic %}
+            <span class="tutorial-badge--thematic">{{ term.entity.label }}</span>
+          {% endfor %}
+        </span>
+      </div>
+    {% endif %}
+
+    <div class="tutorial-info">
+      <span class="tutorial-info__label">Écrit par :</span>
+      <span class="tutorial-info__value">{{ node.uid.entity.label }}</span>
+    </div>
+
+    <div class="tutorial-info">
+      <span class="tutorial-info__label">Niveau de difficulté :</span>
+      <span class="tutorial-info__value">{{ content.field_difficulty_level }}</span>
+    </div>
+  </div>
+
+  {# Sommaire TOC.js #}
+  <div class="toc-wrapper">
+    <div id="toc" class="toc"></div>
+  </div>
+
+  {# Zone pour TOC : inclut présentation, prérequis, objectif et contenu principal #}
+  <div id="content" class="application-content">
+    {% if content.field_training_presentation is not empty %}
+      <section class="tutorial-section tutorial-section--presentation">
+        <h2>Présentation de la formation</h2>
+        {{ content.field_training_presentation }}
+      </section>
+    {% endif %}
+
+    {% if content.field_prerequisite is not empty %}
+      <section class="tutorial-section tutorial-section--prerequisite">
+        <h2>Pré-requis</h2>
+        {{ content.field_prerequisite }}
+      </section>
+    {% endif %}
+
+    {% if content.field_objective is not empty %}
+      <section class="tutorial-section tutorial-section--objective">
+        <h2>Objectif</h2>
+        {{ content.field_objective }}
+      </section>
+    {% endif %}
+
+    <section class="tutorial-section tutorial-section--content">
+      {{ content.field_content }}
+    </section>
+  </div>
+
+</article>

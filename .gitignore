@@ -1,0 +1,20 @@
+# --- Cache, logs, et fichiers temporaires ---
+/vendor/
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
+/private/
+/tmp/
+
+# --- DDEV & Docker ---
+.ddev/db_snapshots/
+/.ddev/mutagen/
+/.ddev/imports/
+/.ddev/traefik/certs/
+/.ddev/traefik/config/
+/.ddev/.downloads/
+/.ddev/.importdb/
+/.ddev/.ssh/
+
+# --- Système ---
+.DS_Store
+Thumbs.db

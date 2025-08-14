@@ -1,0 +1,19 @@
+name: 'Flower'
+type: theme
+core_version_requirement: '>=9.2'
+base theme: False
+
+libraries:
+  - flower/global-styling
+  
+
+regions:
+  header: 'Header'
+  logo: 'Logo'
+  primary_menu: 'Primary menu'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  footer_top: 'Footer Top'
+  footer_middle: 'footer_middle'
+  footer_bottom: 'Footer Bottom'
+  

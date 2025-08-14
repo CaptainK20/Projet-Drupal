@@ -1,0 +1,86 @@
+/* Grille centrée */
+.view-researcher .views-view-responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-xl);
+  max-width: 1280px;
+  margin: 0 auto; 
+  padding: var(--space-xl) var(--space-lg);
+}
+
+/* Carte */
+.view-researcher .views-view-responsive-grid__item-inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.view-researcher .views-view-responsive-grid__item-inner:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.view-researcher .views-field-field-profile-picture img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay texte (nom + affiliation) */
+.view-researcher .views-field-title,
+.view-researcher .views-field-field-affiliation {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: var(--space-md);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: var(--color-light);
+  text-align: left;
+  margin: 0;
+}
+
+/* Nom */
+.view-researcher .views-field-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-weight: bold;
+}
+
+/* Affiliation */
+.view-researcher .views-field-field-affiliation {
+  font-size: var(--text-sm);
+  opacity: 0.85;
+  margin-top: var(--space-xxs);
+}
+
+/* Lien profil en bas à droite */
+.view-researcher .views-field-view-node {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--color-secondary);
+  padding: var(--space-sm) var(--space-sm);
+  border-top-left-radius: var(--radius-md);
+}
+
+.view-researcher .views-field-view-node a {
+  color: var(--color-light);
+  font-size: var(--text-sm);
+  font-weight: bold;
+}
+
+.view-researcher .views-field-view-node:hover {
+  color: var(--color-dark-secondary);
+  background: var(--color-dark-secondary);
+}
+
+.view-researcher .views-field-view-node a:hover {
+  color: var(--color-light);
+  
+}
+
